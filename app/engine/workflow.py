@@ -5,7 +5,7 @@ from app.engine.step import Step
 
 class Workflow:
     def __init__(self, workflow_id: str):
-        self.workflow_id = self.workflow_id
+        self.workflow_id = workflow_id
         self.steps: Dict[str, Step] = {}
         self.dependencies: Dict[str, Set[str]] = defaultdict(set)
 
