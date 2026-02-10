@@ -51,4 +51,10 @@ class Workflow:
 
         for step_id in order:
             step = self.steps[step_id]
-            step.run()
+            print(f"→ Running step {step.step_id}")
+            try:
+                step.run()
+                print(f"✓ Step {step.step_id} completed")
+            except Exception:
+                print(f"✗ Step {step.step_id} failed")
+                raise
